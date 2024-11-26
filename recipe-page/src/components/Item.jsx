@@ -1,10 +1,12 @@
+import omelette from "../assets/omlet.png";
+
 const Item = () => {
   return (
     <section className="bg-white w-full sm:w-3/4 md:w-2/3 lg:w-1/2 mx-auto p-4 sm:p-6 rounded-lg shadow-lg mt-0 md:my-12">
       {/* Image Section */}
       <div>
         <img
-          src="/src/assets/omlet.png"
+          src={omelette}
           alt="Omelette"
           className="rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 w-full"
         />
