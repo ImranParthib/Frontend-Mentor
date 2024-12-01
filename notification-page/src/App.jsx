@@ -1,4 +1,5 @@
 import "./App.css";
+import Activity from "./components/Activity";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         </span>
         <span className="text-gray-600">Mark all as read</span>
       </div>
+      <Activity />
     </div>
   );
 }
