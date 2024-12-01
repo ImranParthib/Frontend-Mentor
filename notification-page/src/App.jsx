@@ -3,7 +3,7 @@ import Activity from "./components/Activity";
 
 function App() {
   return (
-    <div className="h-screen w-2/3 m-auto  bg-slate-100 my-10 p-6">
+    <div className="h-screen sm:w-2/3 m-auto  bg-slate-100 sm:my-10 p-4">
       <div className="flex justify-between">
         <span className="font-bold">
           Notifications{" "}
