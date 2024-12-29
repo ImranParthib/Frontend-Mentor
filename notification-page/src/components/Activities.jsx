@@ -69,7 +69,7 @@ const details = [
 
 function Activities({ notifications }) {
   return (
-    <div className="flex flex-col space-y-2">
+    <div className="flex flex-col space-y-1">
       {details.map((detail, index) => (
         <Activity
           key={index}

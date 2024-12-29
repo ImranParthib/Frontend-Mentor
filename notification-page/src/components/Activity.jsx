@@ -13,7 +13,7 @@ function Activity({
 }) {
   return (
     <article
-      className={`flex items-start space-x-4 p-4 rounded-lg mt-4 ${
+      className={`flex items-start space-x-4 p-4 rounded-lg mt-2 ${
         notifications > 0 && !read ? "bg-blue-100" : ""
       }`}
     >
@@ -30,7 +30,7 @@ function Activity({
           )}
         </p>
         {message && (
-          <div className="border-2 border-gray-300 bg-gray-100 p-2 rounded hover:bg-gray-200">
+          <div className="border-2 border-gray-300 p-2 rounded hover:bg-blue-100">
             <p className="text-md text-gray-800">{message}</p>
           </div>
         )}
