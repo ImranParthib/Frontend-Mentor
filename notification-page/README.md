@@ -4,7 +4,7 @@
 
 This project involves building a notifications page that closely follows the provided design. The objective is to create an intuitive and responsive interface with functionality that distinguishes between "unread" and "read" notifications and provides a mechanism to mark all notifications as read.
 
-![Overview](/public/overview.png)
+![Overview](overview.png)
 
 ## Features
 
