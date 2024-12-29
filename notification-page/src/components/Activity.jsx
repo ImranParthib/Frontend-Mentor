@@ -1,30 +1,61 @@
-import mark from "../assets/images/avatar-mark-webber.webp";
+import PropTypes from "prop-types";
 
-const activity = {
-  user: {
-    name: "Mark Webber",
-    avatar: mark,
-  },
-  action: "reacted to your recent post",
-  post: "My first tournament today!",
-  time: "1 min ago",
-};
-
-function Activity() {
+function Activity({
+  user,
+  action,
+  post,
+  group,
+  message,
+  time,
+  url,
+  read,
+  notifications,
+}) {
   return (
-    <article className="flex items-start space-x-4 p-4 bg-gray-200 rounded-lg   mt-4">
-      <img className="w-12 h-12 rounded-full" src={mark} alt="Mark Webber" />
-      <div className="flex flex-col space-y-1 ">
+    <article
+      className={`flex items-start space-x-4 p-4 rounded-lg mt-4 ${
+        notifications > 0 && !read ? "bg-blue-100" : ""
+      }`}
+    >
+      <img className="w-12 h-12 rounded-full" src={url} alt={user} />
+      <div className="flex flex-col space-y-1">
         <p className="text-sm">
-          <span className="font-bold">Mark Webber </span>
-          <span>reacted to your recent post </span>
-          <span className="font-semibold">My first tournament today!</span>
-          <span className="text-red-500 "> ● </span>
+          <span className="font-bold">{user} </span>
+          <span>{action} </span>
+          {post && <span className="font-semibold">{post}</span>}
+          {group && <span className="font-semibold">{group}</span>}
+
+          {notifications > 0 && !read && (
+            <span className="text-red-500"> ●</span>
+          )}
         </p>
-        <time className="text-xs text-gray-500">1 min ago</time>
+        {message && (
+          <div className="border-2 border-gray-300 bg-gray-100 p-2 rounded hover:bg-gray-200">
+            <p className="text-md text-gray-800">{message}</p>
+          </div>
+        )}
+        <time className="text-xs text-gray-500">{time}</time>
       </div>
     </article>
   );
 }
+
+Activity.propTypes = {
+  user: PropTypes.string.isRequired,
+  action: PropTypes.string.isRequired,
+  post: PropTypes.string,
+  group: PropTypes.string,
+  message: PropTypes.string,
+  time: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired,
+  read: PropTypes.bool.isRequired,
+  notifications: PropTypes.number.isRequired,
+};
+
+Activity.defaultProps = {
+  post: "",
+  group: "",
+  message: "",
+};
 
 export default Activity;
