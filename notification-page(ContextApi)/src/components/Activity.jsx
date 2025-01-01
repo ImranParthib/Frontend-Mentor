@@ -17,7 +17,7 @@ function Activity({
   return (
     <article
       className={`flex items-start space-x-4 p-2 md:p-4 rounded-lg mt-4 ${
-        notifications > 0 && !read ? "bg-blue-100" : ""
+        notifications > 0 && !read ? "bg-blue-50" : ""
       }`}
     >
       {/* User Profile Picture */}

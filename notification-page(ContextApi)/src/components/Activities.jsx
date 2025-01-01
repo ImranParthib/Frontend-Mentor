@@ -8,8 +8,8 @@ function Activities() {
 
   return (
     <div className="flex flex-col space-y-2">
-      <div className="flex justify-between items-center">
-        <span className="font-bold">
+      <div className="flex justify-between items-center pb-3">
+        <span className="font-bold text-xl text-gray-800">
           Notifications{" "}
           <strong className="bg-blue-700 rounded-sm px-2 text-white">
             {notifications}
