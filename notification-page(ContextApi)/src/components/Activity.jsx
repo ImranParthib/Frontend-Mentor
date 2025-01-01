@@ -16,7 +16,7 @@ function Activity({
 }) {
   return (
     <article
-      className={`flex flex-col md:flex-row items-start space-x-4 p-4 rounded-lg mt-4 ${
+      className={`flex items-start space-x-4 p-2 md:p-4 rounded-lg mt-4 ${
         notifications > 0 && !read ? "bg-blue-100" : ""
       }`}
     >
