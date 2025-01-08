@@ -3,7 +3,21 @@ import Header from "./components/Header";
 import ProductDetails from "./components/ProductDetails";
 
 const products = [
-  { name: "Product 1", price: 29.99, description: "Description for product 1" },
+  {
+    id: 1,
+    image: "../src/images/products/image-product-1.jpg",
+    previewimages: [
+      "../src/images/products/image-product-1.jpg",
+      "../src/images/products/image-product-2.jpg",
+      "../src/images/products/image-product-3.jpg",
+      "../src/images/products/image-product-4.jpg",
+    ],
+    moto: "SNEAKER COMPANY",
+    title: "Fall Limited Edition Sneakers",
+    price: 250,
+    description:
+      "These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they’ll withstand everything the weather can offer.",
+  },
 ];
 
 const app = document.querySelector("#app");
