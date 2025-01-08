@@ -9,7 +9,7 @@ export default function ProductDetails(products) {
   const imageContainer = document.createElement("div");
   imageContainer.className = "w-full md:w-1/2";
 
-  // preview image container
+  // Preview image container
   const previewImageContainer = document.createElement("div");
   previewImageContainer.className = "flex gap-2";
 
@@ -56,7 +56,7 @@ export default function ProductDetails(products) {
   priceRow.className = "flex items-center gap-4";
 
   const price = document.createElement("span");
-  price.textContent = `$${product.price}`;
+  price.textContent = `$${product.price}.00`;
   price.className = "text-3xl font-bold";
 
   const discount = document.createElement("span");
@@ -79,7 +79,7 @@ export default function ProductDetails(products) {
   actionsContainer.className = "flex flex-col sm:flex-row gap-4";
 
   // Quantity selector
-  const quantitySelector = createQuantitySelector();
+  const quantitySelector = createQuantitySelector(product, price);
 
   // Add to cart button
   const addToCartBtn = document.createElement("button");
@@ -109,7 +109,7 @@ export default function ProductDetails(products) {
   return container;
 }
 
-function createQuantitySelector() {
+function createQuantitySelector(product, priceElement) {
   const container = document.createElement("div");
   container.className = "flex items-center bg-gray-100 rounded-lg";
 
@@ -139,12 +139,14 @@ function createQuantitySelector() {
     if (quantity > 0) {
       quantity--;
       quantityDisplay.textContent = quantity;
+      priceElement.textContent = `$${(product.price * quantity).toFixed(2)}`;
     }
   });
 
   plusBtn.addEventListener("click", () => {
     quantity++;
     quantityDisplay.textContent = quantity;
+    priceElement.textContent = `$${(product.price * quantity).toFixed(2)}`;
   });
 
   container.appendChild(minusBtn);
